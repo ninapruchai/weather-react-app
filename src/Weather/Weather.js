@@ -1,13 +1,12 @@
-export default function props({ props }) {
-  console.log(props);
+export default function Weather({ data }) {
   return (
-    <ul className="props">
-      <li>Temperature: {props.temperature}°C</li>
-      <li>Description: {props.desc}</li>
-      <li>Humidity: {props.humidity}%</li>
-      <li>Wind: {props.wind}km/h</li>
+    <ul className="data">
+      <li>Temperature: {data.temperature}°C</li>
+      <li>Description: {data.desc}</li>
+      <li>Humidity: {data.humidity}%</li>
+      <li>Wind: {data.wind}km/h</li>
       <li>
-        <img src={props.icon} alt={props.desc} />
+        <img src={data.icon} alt={data.desc} />
       </li>
     </ul>
   );

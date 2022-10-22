@@ -22,7 +22,6 @@ export default function Serch() {
   }
 
   function updateWeather(response) {
-    console.log(response);
     setLoad(true);
     setWeather({
       temperature: Math.round(response.data.main.temp),
@@ -31,7 +30,6 @@ export default function Serch() {
       wind: response.data.wind.speed,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
-    console.log(weather);
   }
 
   return (
@@ -40,7 +38,7 @@ export default function Serch() {
         <input type="serch" placeholder="Enter a city..." onChange={getCity} />
         <Button name="Search" />
       </form>
-      {isLoaded ? <Weather props={weather} /> : null}
+      {isLoaded ? <Weather data={weather} /> : null}
     </div>
   );
 }
