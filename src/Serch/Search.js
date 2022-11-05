@@ -3,6 +3,8 @@ import axios from "axios";
 import Button from "../Button/Button";
 import Weather from "../Weather/Weather";
 
+import "./Search.css";
+
 export default function Serch() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
@@ -34,9 +36,17 @@ export default function Serch() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input type="serch" placeholder="Enter a city..." onChange={getCity} />
-        <Button name="Search" />
+      <form onSubmit={handleSubmit} className="search">
+        <div className="wrap">
+          <input
+            type="serch"
+            placeholder="Enter a city..."
+            onChange={getCity}
+            className="search-input"
+          />
+
+          <Button name="Search" />
+        </div>
       </form>
       {isLoaded ? <Weather data={weather} /> : null}
     </div>

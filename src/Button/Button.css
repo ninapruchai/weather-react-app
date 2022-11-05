@@ -1,0 +1,21 @@
+.search-button {
+  display: none;
+  padding: 0.5em;
+  background: #53ccdb;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: inherit;
+  outline: none;
+}
+
+.search-button:active {
+  box-shadow: 0 5px 6px 0 rgba(22, 67, 199, 0.28);
+}
+
+@media (min-width: 50rem) {
+  .search-button {
+    display: block;
+  }
+}

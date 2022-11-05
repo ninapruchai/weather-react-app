@@ -1,0 +1,25 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em;
+  background: #fff;
+  border-radius: 0.5rem;
+  position: relative;
+}
+
+.search-input {
+  padding: 0.5em;
+  border: none;
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: 600;
+  outline: none;
+}
+
+.wrap:focus-within {
+  box-shadow: 0 5px 6px 0 rgba(22, 67, 199, 0.28);
+}
+
+.search-input::placeholder {
+  color: #ccc;
+}
