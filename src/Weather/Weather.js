@@ -1,13 +1,31 @@
+import FormatedDate from "../FormatedDate/FormatedDate.js";
+import "./Weather.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWater, faWind } from "@fortawesome/free-solid-svg-icons";
+
 export default function Weather({ data }) {
   return (
-    <ul className="data">
-      <li>Temperature: {data.temperature}°C</li>
-      <li>Description: {data.desc}</li>
-      <li>Humidity: {data.humidity}%</li>
-      <li>Wind: {data.wind}km/h</li>
-      <li>
-        <img src={data.icon} alt={data.desc} />
-      </li>
-    </ul>
+    <div>
+      <div className="weather-location">
+        <p className="location">{data.city}</p>
+        <FormatedDate date={data.date} />
+      </div>
+      <ul className="data">
+        <li className="temperature">{data.temperature}</li>
+
+        <li className="icon">
+          <img src={data.icon} alt={data.desc} />
+          <span className="desc">{data.desc}</span>
+        </li>
+        <li className="humidity">
+          <FontAwesomeIcon icon={faWater} color="#53ccdb" />
+          Humidity: {data.humidity}%
+        </li>
+        <li className="wind">
+          <FontAwesomeIcon icon={faWind} color="#53ccdb" />
+          Wind: {data.wind}km/h
+        </li>
+      </ul>
+    </div>
   );
 }

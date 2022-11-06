@@ -13,8 +13,8 @@ export default function Serch() {
   function handleSubmit(event) {
     event.preventDefault();
 
-    const apiKey = `16854fb55399cdd51737d3f388b62c57`;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiKey = `a32btaef1038a7d6469a901f8943eo6b`;
+    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
     axios(apiUrl).then(updateWeather);
   }
@@ -26,11 +26,13 @@ export default function Serch() {
   function updateWeather(response) {
     setLoad(true);
     setWeather({
-      temperature: Math.round(response.data.main.temp),
-      desc: response.data.weather[0].description,
-      humidity: response.data.main.humidity,
+      city: response.data.city,
+      date: new Date(response.data.time * 1000),
+      temperature: Math.round(response.data.temperature.current),
+      desc: response.data.condition.description,
+      humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.condition.icon_url,
     });
   }
 
