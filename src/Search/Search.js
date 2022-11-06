@@ -5,7 +5,7 @@ import Weather from "../Weather/Weather";
 
 import "./Search.css";
 
-export default function Serch() {
+export default function Search() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState({});
   const [isLoaded, setLoad] = useState(false);
