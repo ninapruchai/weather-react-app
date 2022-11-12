@@ -14,7 +14,10 @@ export default function Weather({ data }) {
         <li className="temperature">{data.temperature}</li>
 
         <li className="icon">
-          <img src={data.icon} alt={data.desc} />
+          <img
+            src={`http://openweathermap.org/img/wn/${data.icon}@2x.png`}
+            alt={data.desc}
+          />
           <span className="desc">{data.desc}</span>
         </li>
         <li className="humidity">
