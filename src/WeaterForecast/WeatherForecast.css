@@ -1,0 +1,50 @@
+.WeatherForecast {
+  display: flex;
+}
+.container-forecast {
+  display: grid;
+}
+
+.temp {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.day {
+  align-self: center;
+  justify-self: center;
+}
+
+.min {
+  color: #5384b6;
+}
+
+@media (min-width: 50rem) {
+  .container-forecast:nth-last-child(n + 2) {
+    border-right: dashed 1px #53ccdb;
+  }
+}
+
+@media (max-width: 50rem) {
+  .WeatherForecast {
+    display: flex;
+    flex-direction: column;
+  }
+  .container-forecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .temp {
+    flex-direction: column;
+    align-self: center;
+  }
+
+  .day-icon {
+    grid-column: 4/5;
+  }
+  .container-forecast {
+    padding-block: 0.5em;
+    border-bottom: dashed 1px #53ccdb;
+  }
+}
