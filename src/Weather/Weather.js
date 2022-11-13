@@ -32,7 +32,7 @@ export default function Weather({ data }) {
           </li>
         </ul>
       </div>
-      <WeatherForecast />
+      <WeatherForecast coordinates={data.coordinates} />
     </div>
   );
 }

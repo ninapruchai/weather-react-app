@@ -28,6 +28,7 @@ export default function Search() {
     setLoad(true);
     setWeather({
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: Math.round(response.data.main.temp),
       desc: response.data.weather[0].description,
