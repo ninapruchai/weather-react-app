@@ -12,10 +12,12 @@ export default function WeaterForecast({ coordinates }) {
   useEffect(() => setLoaded(false), [coordinates]);
 
   function handleResponse(response) {
-    console.log("run");
     setForecast(response.data.daily);
     setLoaded(true);
-    console.log(response.data.daily);
+  }
+
+  function getForecast() {
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (isLoaded) {
@@ -29,7 +31,6 @@ export default function WeaterForecast({ coordinates }) {
       </div>
     );
   } else {
-    axios.get(apiUrl).then(handleResponse);
-    return null;
+    getForecast();
   }
 }

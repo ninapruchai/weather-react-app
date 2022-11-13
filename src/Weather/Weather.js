@@ -13,7 +13,7 @@ export default function Weather({ data }) {
           <FormatedDate date={data.date} />
         </div>
         <ul className="data">
-          <li className="temperature">{data.temperature}</li>
+          <li className="temperature">{data.temperature}°</li>
 
           <li className="icon">
             <img

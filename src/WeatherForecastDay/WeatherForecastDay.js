@@ -1,6 +1,4 @@
 export default function WeatherForecastDay(props) {
-  console.log(props);
-
   function maxTemperature(max = props.data.temp.max) {
     return `${Math.round(max)}°`;
   }

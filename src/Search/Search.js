@@ -24,7 +24,6 @@ export default function Search() {
   }
 
   function updateWeather(response) {
-    console.log(response);
     setLoad(true);
     setWeather({
       city: response.data.name,
